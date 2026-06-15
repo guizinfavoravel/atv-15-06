@@ -7,7 +7,7 @@ export class Produto {
     #descricao_produto;
     #estoque_produto;
 
-    constructor(pNome, pPreco, pImagem, pIdCategoria, pDescricao, pEstoque,  pId ) {
+    constructor(pNome, pPreco, pImagem, pIdCategoria, pDescricao, pEstoque, pId) {
         this.#nome_produto = pNome;
         this.#preco_produto = pPreco;
         this.#imagem_produto = pImagem;
@@ -23,7 +23,7 @@ export class Produto {
 
     set id_produto(value) {
         this.#validarId(value);
-        this.#id_produto
+        this.#id_produto = value;
     }
 
     get nome_produto() {
@@ -109,7 +109,7 @@ export class Produto {
             throw new Error("ID inválido");
         }
     }
-    
+
 
     #validarDescricao(value) {
         if (value && (value.trim().length < 3 || value.trim().length > 255)) {
