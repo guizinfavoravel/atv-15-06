@@ -77,7 +77,7 @@ const produtoController = {
                 return res.status(400).json({ message: "ID é obrigatório" });
             }
 
-            const imagem_produto = req.file ? `uploads/image/${req.file.filename}` : undefined;
+            const imagem_produto = req.file ? `uploads/image/${req.file.filename}` : null;
 
             const { nome_produto, preco_produto, descricao_produto, estoque_produto, id_categoria } = req.body;
 

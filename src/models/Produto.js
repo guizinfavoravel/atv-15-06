@@ -146,4 +146,4 @@ export class Produto {
             produtoAtual.id_produto
         );
     }
-}
+}   
