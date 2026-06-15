@@ -32,7 +32,7 @@ export class Produto {
 
     set nome_produto(value) {
         this.#validarNome(value);
-        this.#nome_produto;
+        this.#nome_produto = value;
     }
 
     get preco_produto() {
@@ -41,7 +41,7 @@ export class Produto {
 
     set preco_produto(value) {
         this.#validarValor(value);
-        this.#preco_produto;
+        this.#preco_produto = value;
     }
 
     get imagem_produto() {
@@ -50,7 +50,7 @@ export class Produto {
 
     set imagem_produto(value) {
         this.#validarCaminhoImagem(value);
-        this.#imagem_produto;
+        this.#imagem_produto = value;
     }
 
     get id_categoria() {
@@ -59,7 +59,7 @@ export class Produto {
 
     set id_categoria(value) {
         this.#validarIdCategoria(value);
-        this.#id_categoria;
+        this.#id_categoria = value;
     }
 
     get descricao_produto() {
@@ -68,7 +68,7 @@ export class Produto {
 
     set descricao_produto(value) {
         this.#validarDescricao(value);
-        this.#descricao_produto;
+        this.#descricao_produto = value;
     }
 
     get estoque_produto() {
@@ -77,7 +77,7 @@ export class Produto {
 
     set estoque_produto(value) {
         this.#validarEstoque(value);
-        this.#estoque_produto;
+        this.#estoque_produto = value;
     }
 
     #validarNome(value) {
