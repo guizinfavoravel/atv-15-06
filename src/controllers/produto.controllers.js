@@ -88,6 +88,7 @@ const produtoController = {
             }
 
             const produto = Produto.editar({ nome_produto, preco_produto, imagem_produto, descricao_produto, estoque_produto, id_categoria }, produtoAtual);
+            console.log(produto);
 
             
             const resultado = await produtoRepository.atualizarProduto(produto);
