@@ -12,9 +12,10 @@ app.use('/', routes);
 
 
 initializeDatabase().then(() => {
-    app.listen(process.env.SERVER_PORT, () => {
-        console.log(`Servidor rodando na porta ${process.env.SERVER_PORT}`);
-    });
+    const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
 }).catch(err => {
     console.error("Erro ao inicializar o banco de dados:", err);
 });
