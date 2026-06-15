@@ -122,3 +122,5 @@ export async function initializeDatabase() {
         throw error;
     }
 }
+
+export const db = connection;
