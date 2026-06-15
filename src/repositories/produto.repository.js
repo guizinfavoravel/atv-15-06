@@ -62,6 +62,7 @@ const produtoRepository = {
                 produto.id_produto
             ];
             console.log(values);
+            
             const [result] = await conn.execute(sql, values);
 
             await conn.commit();

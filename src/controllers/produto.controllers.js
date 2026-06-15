@@ -87,7 +87,7 @@ const produtoController = {
                 return res.status(404).json({ message: "Produto não encontrado" });
             }
 
-            const produto = Produto.editar({ nome_produto, preco_produto, imagem_produto, descricao_produto, estoque_produto, id_categoria }, produtoAtual);
+            const produto = Produto.editar({ nome_produto, preco_produto, imagem_produto, descricao_produto, estoque_produto, id_categoria }, produtoAtual[0]);
 
             
             const resultado = await produtoRepository.atualizarProduto(produto);
