@@ -1,7 +1,6 @@
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 
-// Singleton para a conexão com o banco de dados
 class Database {
     static #instance = null;
     #pool = null;
@@ -52,6 +51,14 @@ export async function initializeDatabase() {
 
         await tempConnection.query(`CREATE DATABASE IF NOT EXISTS \`${dbName}\`;`);
         await tempConnection.query(`USE \`${dbName}\`;`);
+        
+        await tempConnection.query(`SET FOREIGN_KEY_CHECKS = 0;`);
+        await tempConnection.query(`DROP TABLE IF EXISTS itens_pedido;`);
+        await tempConnection.query(`DROP TABLE IF EXISTS pedidos;`);
+        await tempConnection.query(`DROP TABLE IF EXISTS produtos;`);
+        await tempConnection.query(`DROP TABLE IF EXISTS categorias;`);
+        await tempConnection.query(`SET FOREIGN_KEY_CHECKS = 1;`);
+
         await tempConnection.query(`
             CREATE TABLE IF NOT EXISTS categorias (
                 id_categoria INT AUTO_INCREMENT PRIMARY KEY,
